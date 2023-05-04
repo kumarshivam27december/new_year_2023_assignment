@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most visited site in each major countries of the world</title>
+    <style>
+        table,th,td{
+            border: 10px dashed #0961e6e6;
+            font-weight: bolder;
+            font-style: italic;
+            font-size: x-large;
+            
+        }
+        body{
+            background-image: url('data:image/jpeg;base64,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');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            background-position: right top;
+        }
+        h1{
+            background-color: red;
+            margin-left: 00px;
+            margin-right: 575px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        p{
+            background-color: #4dff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>MOST VISITED SITE IN EACH COUNTRIES</h1>
+    <p>as the internet was available for all countries at a less price 
+        it became accessible for everyone to just get whatever whenever he needed 
+        anything at a little time . so ,we have certain countries list to help you find 
+        out which countries have searched what at a search engine like google,microsoft edge ,firefox etc
+    </p>
+    <table>
+        <tr>
+<th>s.no</th>
+<th>country name</th>
+<th>most searched website</th>
+<th>2nd most searched website</th>
+<th>3rd most visited website</th>
+<th>4th most visited website</th>
+<th>5th most visited website</th>
+
+        </tr>
+<tr>
+
+    <td>01</td>
+    <td>china</td>
+    <td>Tmall.com</td>
+    <td>Baidu.com</td>
+    <td>QQ.com</td>
+    <td>sohu.com</td>
+    <td>Taobao.com</td>
+
+
+
+</tr>
+<tr>
+<td>02</td>
+<td>india</td>
+<td>google</td>
+<td>facebook</td>
+<td>youtube</td>
+<td>xnxx.com</td>
+<td>xvideos</td>
+</tr>
+<tr>
+    <td>03</td>
+    <td>united state of america</td>
+    <td>google</td>
+    <td>youtube</td>
+    <td>facebook</td>
+    <td>amazon</td>
+    <td>yahoo</td>
+</tr>
+<tr> <td>04</td>
+    <td>indonesia</td>
+    <td>google</td>
+    <td>youtube</td>
+    <td>facebook</td>
+    <td>instagram</td>
+    <td>whatsapp</td></tr>
+    <tr>
+        <td>05</td>
+        <td>pakistan</td>
+        <td>google</td>
+        <td>youtube</td>
+        <td>facebook</td>
+        <td>whatsapp</td>
+        <td>instagram</td>
+    </tr>
+    <tr>
+        <td>06</td>
+        <td>nigeria</td>
+        <td>bet9ja.com</td>
+        <td>nairaland.com</td>
+        <td>jumia.com.ng</td>
+        <td>cerit.ng</td>
+        <td>punchng.com</td>
+    </tr>
+    <tr>
+        <td>07</td>
+        <td>brazil</td>
+        <td>google</td>
+        <td>youtube</td>
+        <td>facebook</td>
+        <td>globo</td>
+        <td>instagram</td>
+    </tr>
+<tr>
+    <td>08</td>
+    <td>bangladesh</td>
+    <td>google</td>
+    <td>youtube</td>
+    <td>facebook</td>
+    <td>prothomalo</td>
+    <td>somoyanews.tv</td>
+</tr>
+<tr>
+    <td>09</td>
+    <td>Russia</td>
+    <td>yandex.com</td>
+    <td>youtube</td>
+    <td>google</td>
+    <td>turbopage.org</td>
+    <td>vk.com</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td>mexico</td>
+    <td>google</td>
+    <td>youtube</td>
+    <td>facebook</td>
+    <td>xvideos</td>
+    <td>xnxx</td>
+</tr>
+<tr>
+    <td>11</td>
+    <td>Japan</td>
+    <td>google</td>
+    <td>youtube</td>
+    <td>yahoo</td>
+    <td>twitter</td>
+    <td>blog.jp</td>
+    
+</tr>
+
+    </table>
+
+</body>
+</html>
